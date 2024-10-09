@@ -1,0 +1,15 @@
+<a
+  routerLink="/recipes"
+  [queryParams]="{ category: element.query }"
+  class="border-t-2 border-r-4 border-b-2 relative border-orange-600 shadow-md shadow-black rounded-lg h-36 hover:scale-105 transition-transform duration-300 flex items-center justify-center"
+>
+  <img
+    [src]="'/images/' + element.query + '.jpg'"
+    class="object-cover h-full w-full"
+    [alt]="'image de la catégorie ' + element.category"
+  />
+  <div [ngClass]="['absolute h-full w-full bg-black transition-opacity duration-500', stateAnimation === 'hovered' ? 'opacity-25' : 'opacity-40']"></div>
+  <h2 [@textAnimation]="stateAnimation" class="absolute text-white/80 font-lobster text-4xl font-semibold">
+    {{ element.category }}
+  </h2>
+</a>

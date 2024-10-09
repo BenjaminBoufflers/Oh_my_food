@@ -1,0 +1,11 @@
+<nav 
+[ngClass]="['h-16 flex p-2 md:px-6 backdrop-blur-md  items-center font-semibold sticky top-0 transition-all duration-500', isScrolled ? 'bg-white/80' : 'bg-transparent']"
+>
+  <a class="h-full" routerLink="/">
+    <img src="logo.png" class="h-full" alt="logo du site" />
+  </a>
+  <ul class="flex mx-auto gap-10 md:gap-20 text-lg">
+    <app-nav-element *ngFor="let item of menu;" [element]="item"></app-nav-element>
+  </ul>
+  <app-animated-button animation="3d" tagName="a" link="/">Connexion</app-animated-button>
+</nav>

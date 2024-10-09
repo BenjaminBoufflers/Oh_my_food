@@ -1,0 +1,35 @@
+<ng-container [ngSwitch]="tagName">
+  <button
+    *ngSwitchCase="'button'"
+    [ngStyle]="{ '--color': color }"
+    [ngClass]="[
+      'p-2 text-orange-500 rounded-xl text-lg border-orange-500 border-2',
+      animation === '3d' ? 'border-dashed' : '',
+      animation === 'fill' ? 'border-solid' : '',
+      className
+    ]"
+    [@boxAnimation]="animation === '3d' ? stateAnimation : null"
+    [@fillAnimation]="animation === 'fill' ? stateAnimation : null"
+  >
+    <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+  </button>
+
+  <a
+    *ngSwitchCase="'a'"
+    [ngStyle]="{ '--color': color }"
+    [ngClass]="[
+      'p-2 text-orange-500 rounded-xl text-lg border-orange-500 block cursor-pointer',
+      animation === '3d' ? 'border-dashed border-2' : '',
+      animation === 'fill' ? 'border-2' : '',
+      className
+    ]"
+    [@boxAnimation]="animation === '3d' ? stateAnimation : null"
+    [@fillAnimation]="animation === 'fill' ? stateAnimation : null"
+    [routerLink]="link"
+  >
+    <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+  </a>
+</ng-container>
+<ng-template #contentTpl>
+  <ng-content></ng-content>
+</ng-template>

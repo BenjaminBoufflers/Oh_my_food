@@ -1,0 +1,5 @@
+<app-lateral-menu class=" bg-green-200" />
+
+<div class="p-8 px-10 grid grid-cols-1 md:grid-cols-2 gap-10 min-h-[calc(100dvh-64px)]">
+    <app-category-element *ngFor="let category of categories" [element]="category" />
+</div>

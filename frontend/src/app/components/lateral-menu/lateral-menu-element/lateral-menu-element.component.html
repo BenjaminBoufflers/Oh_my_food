@@ -1,0 +1,6 @@
+<li class="flex gap-1 relative">
+  <fa-icon class="absolute -translate-x-full -left-1.5" *ngIf="isActive(element.query)" [icon]="faUtensilSpoon"></fa-icon>
+  <a routerLink="/recipes" [ngClass]="isActive(element.query) ? 'text-orange-100 scale-110 transition-all duration-300' : ''" [queryParams]="{ category: element.query }">
+    {{element.category}}
+  </a>
+</li>
